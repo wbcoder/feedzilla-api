@@ -79,3 +79,91 @@ If your system has [http://curl.haxx.se/ curl] (and it should!), you’ve alread
 
 ====Entity-encoded HTML in Title, Description (Summary)  and Content====
 The Title, Description (Summary) and Content fields might contain entity-encoded HTML. To be able to display these fields as HTML they must be entity-decoded.
+----
+==REST API==
+===Resources===
+The following are definitions of the resources that are exposed by the API:
+
+|| *Resource Name* || *Description* ||
+|| Culture || Describes a culture resource. (en_us for instance) ||
+|| Category || Describes a category of source feeds ||
+|| Subcategory || Describes a subcategory of source feeds ||
+|| Articles || Describes a set articles ||
+
+===Resource Methods===
+The API supports the following methods to send and receive Feedzilla data.
+
+Base URI: http://api.feedzilla.com
+
+
+
+
+
+
+===Cultures Methods===
+====/v1/cultures._format_====
+*Description:* Returns a list of supported cultures.
+
+*Formats:* xml, json
+
+*HTTP Method(s):* GET
+
+*Parameters:*
+  * None
+
+===Categories and Subcategories Methods===
+====/v1/categories._format_=====
+*Description*: Returns a list of supported categories.
+
+*Formats:* xml, json
+
+*HTTP Method(s):* GET
+
+*Parameters:*
+  * culture_code - Optional. Restricts the results to the given culture. for instance japan is ja_jp. Default is en_us.
+  * order - Optional. The sort order of the list to be returned. Can be one of the following: 
+    * popular - The list will be ordered by item popularity (most popular is first).
+    * none - No special order. This is the default value.
+
+====/v1/subcategories._format_====
+*Description:* Returns a list of supported subcategories hierarchy.
+    
+*Formats:* xml, json
+
+*HTTP Method(s):* GET
+
+*Parameters:*
+  * culture_code - Optional. Restricts the results to the given culture. for instance japan is ja_jp. Default is en_us.
+     * order - Optional. The sort order of the list to be returned. Can be one of the following: 
+       * popular - The list will be ordered by item popularity (most popular is first).
+       * none - No special order. This is the default value.
+
+
+
+    Description:
+
+    Returns a list of supported subcategories for the category given by category_id.
+     
+
+    URL:
+
+    http://api.feedzilla.com/v1/categories/{category_id}/subcategories.format
+
+     
+
+    Formats: 
+
+    xml, json
+
+     
+
+    HTTP Method(s):
+
+    GET
+
+
+    Parameters:
+
+        * order - Optional. The sort order of the list to be returned. Can be one of the following: 
+              o popular - The list will be ordered by item popularity (most popular is first).
+              o none - No special order. This is the default value.
