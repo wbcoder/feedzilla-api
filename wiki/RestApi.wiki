@@ -9,7 +9,7 @@ The following are the topics covered by this document.
 
 ===Topics===
 
-  * [RestApi#Introduction]
+  * [Introduction]
     * General
     * Response Codes and Error Messages
       * HTTP Status Codes
@@ -30,9 +30,9 @@ The API attempts to conform to the design principles of [http://en.wikipedia.org
 The API presently supports the following data formats: XML, JSON, and the RSS and Atom syndication formats, with some methods only accepting a subset of these formats.
 
 The following requests a JSON response format by using the "json" extension:
-{{{
-http://api.feedzilla.com/v1/cultures.json
-}}}
+
+`http://api.feedzilla.com/v1/cultures.json`
+
 Parameter values should be converted to UTF-8 and URL encoded.
 
 All Feedzilla APIs support an optional return format parameter. Note that json is the default response format. XML is also available. Some endpoints also support a simple txt format. 
