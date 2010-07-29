@@ -9,9 +9,9 @@ The following are the topics covered by this document.
 
 ===Topics===
 
-  * [Introduction]
-    * [General]
-    * [Response Codes and Error Messages]
+  * [#Introduction Introduction]
+    * [#General General]
+    * [#Response_Codes_and_Error_Messages Response Codes and Error Messages]
       * [#HTTP_Status_Codes HTTP Status Codes]
       * [#Error_Messages Error Messages]
     * [#A_command_line_is_all_you_need_to_use_the_Feedzilla_API A command line is all you need to use the Feedzilla API]
