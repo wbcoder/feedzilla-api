@@ -1,2 +1,42 @@
 #summary Feedzilla RESTful API method documentation
 #labels Featured
+=Feedzilla API Specification=
+*Here we describe in detail the "Application Programming Interface" (API) of Feedzilla. Programmers can use the Feedzilla API to make applications, websites, widgets, and other projects that interact with Feedzilla's data.*
+
+==Getting Started==
+
+The following are the topics covered by this document.
+
+===Topics===
+
+  * Introduction
+    * General
+    * Response Codes and Error Messages
+      * HTTP Status Codes
+      * Error Messages
+    * A command line is all you need to use the Feedzilla API
+    * References
+  * REST API Documentation
+    * Resources
+    * Resource Methods
+      * Cultures Methods
+      * Categories and Subcategories Methods
+      * Articles Methods
+  * Terms of Service
+----
+==Introduction==
+===General===
+The API attempts to conform to the design principles of [http://en.wikipedia.org/wiki/Representational_State_Transfer Representational State Transfer] (REST).
+
+The API presently supports the following data formats: XML, JSON, and the RSS and Atom syndication formats, with some methods only accepting a subset of these formats.
+
+The following requests a JSON response format by using the "json" extension:
+{{{
+http://api.feedzilla.com/v1/cultures.json
+}}}
+Parameter values should be converted to UTF-8 and URL encoded.
+
+All Feedzilla APIs support an optional return format parameter. Note that json is the default response format. XML is also available. Some endpoints also support a simple txt format. 
+{{{
+.json
+}}}
