@@ -95,11 +95,6 @@ The API supports the following methods to send and receive Feedzilla data.
 
 Base URI: http://api.feedzilla.com
 
-
-
-
-
-
 ===Cultures Methods===
 ====/v1/cultures._format_====
 *Description:* Returns a list of supported cultures.
@@ -110,7 +105,7 @@ Base URI: http://api.feedzilla.com
 
 *Parameters:*
   * None
-
+----
 ===Categories and Subcategories Methods===
 ====/v1/categories._format_=====
 *Description*: Returns a list of supported categories.
@@ -124,7 +119,7 @@ Base URI: http://api.feedzilla.com
   * order - Optional. The sort order of the list to be returned. Can be one of the following: 
     * popular - The list will be ordered by item popularity (most popular is first).
     * none - No special order. This is the default value.
-
+----
 ====/v1/subcategories._format_====
 *Description:* Returns a list of supported subcategories hierarchy.
     
@@ -137,33 +132,43 @@ Base URI: http://api.feedzilla.com
      * order - Optional. The sort order of the list to be returned. Can be one of the following: 
        * popular - The list will be ordered by item popularity (most popular is first).
        * none - No special order. This is the default value.
+----
+====/v1/categories/_{category_id}_/subcategories._format_====
 
+*Description:* Returns a list of supported subcategories for the category given by category_id.
 
+*Formats:* xml, json
 
-    Description:
+*HTTP Method(s):* GET
 
-    Returns a list of supported subcategories for the category given by category_id.
-     
+*Parameters*:
+  * order - Optional. The sort order of the list to be returned. Can be one of the following: 
+    * popular - The list will be ordered by item popularity (most popular is first).
+    * none - No special order. This is the default value.
+----
+===Articles Method===
 
-    URL:
-
-    http://api.feedzilla.com/v1/categories/{category_id}/subcategories.format
-
-     
-
-    Formats: 
-
-    xml, json
-
-     
-
-    HTTP Method(s):
-
-    GET
-
-
-    Parameters:
-
-        * order - Optional. The sort order of the list to be returned. Can be one of the following: 
-              o popular - The list will be ordered by item popularity (most popular is first).
-              o none - No special order. This is the default value.
+*Sample JSON Result for all articles methods:*
+{{{
+    {
+       "articles":[
+          {
+             "url":"http://proxy.feedzilla.com/r/35423",
+             "title":"CNN: News edition has changed! Please read more!",
+             "summary":"Please read the article when possible, we are likely to get used to it!",
+             "publish_date":"Thu, 01 Jul 2010 14:14:38 +0000",
+           "author":"Feedzilla Team",
+           "source":"CNN"
+          },
+          {
+             "url":"http://proxy.feedzilla.com/r/4123",
+             "title":"CNN: News edition has changed! Please read more!",
+             "summary":"Our culture code has changed to news edition. Please read the article when possible, we are likely to get used to it!",
+             "publish_date":"Thu, 01 Jul 2010 14:14:38 +0000",
+           "author":"Feedzilla Team",
+           "source":"CNN"
+          }
+       ],
+       "syndication_url":"http://api.feedzilla.com/v1/categories/452/articles.rss"-
+    }
+}}}
