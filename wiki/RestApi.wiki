@@ -9,13 +9,12 @@ The following are the topics covered by this document.
 
 ===Topics===
 
-  * Introduction
+  * [Introduction]
     * General
     * Response Codes and Error Messages
       * HTTP Status Codes
       * Error Messages
     * A command line is all you need to use the Feedzilla API
-    * References
   * REST API Documentation
     * Resources
     * Resource Methods
@@ -42,7 +41,6 @@ All Feedzilla APIs support an optional return format parameter. Note that json i
 }}}
 All Feedzilla APIs support jsonp which is the json format with a callback specified, such as:
 {{{
-<wiki:video url="http://www.youtube.com/watch?v=3LkNlTNHZzE"/>
 .json&callback=callback_method
 }}}
 The application communicating with a resource does not need information concerning firewalls, gateways, proxies or other network devices between the application and the server holding the resource.
@@ -50,3 +48,34 @@ The application communicating with a resource does not need information concerni
 All dates will be treated as UTC and their formats must be YYYY-DD-MM.
 
 All published date time objects are UTC based and conform to [http://asg.web.cmu.edu/rfc/rfc822.html RFC822.]
+
+===Response Codes and Error Messages===
+====HTTP Status Codes====
+
+The Feedzilla API attempts to return appropriate HTTP status codes for every request.
+
+    * *200 OK*: Success!
+    * *304 Not Modified*: There was no new data to return.
+    * *400 Bad Request*: The request was invalid.  An accompanying error message will explain why.
+    * *403 Forbidden*: The request is understood, but it has been refused.  An accompanying error message will explain why. 
+    * *404 Not Found*: The URI requested is invalid or the resource requested, such as a category, does not exists.
+    * *500 Internal Server Error*: Something is broken. 
+    * *502 Bad Gateway*: Feedzilla is down or being upgraded.
+    * *503 Service Unavailable*: The Feedzilla servers are up, but overloaded with requests. Try again later.
+
+====Error Messages====
+
+When the API returns error messages, it does so in your requested format. For example, an error from an XML method might look like this:
+
+{{{
+    <error>
+        <statuscode>400</statuscode>
+        <statusdescription>The specified order is invalid</statusdescription>
+    </error>
+}}}
+
+====A command line is all you need to use the Feedzilla API====
+If your system has [http://curl.haxx.se/ curl] (and it should!), you’ve already got a great way to poke around the Feedzilla API.
+
+====Entity-encoded HTML in Title, Description (Summary)  and Content====
+The Title, Description (Summary) and Content fields might contain entity-encoded HTML. To be able to display these fields as HTML they must be entity-decoded.
