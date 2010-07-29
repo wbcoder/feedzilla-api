@@ -21,7 +21,7 @@ The following are the topics covered by this document.
       * [Cultures Methods]
       * [Categories and Subcategories Methods]
       * [Articles Methods]
-  * [Terms of Service]
+  * [#Terms_of_Service Terms of Service]
 ----
 ==Introduction==
 ===General===
