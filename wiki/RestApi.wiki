@@ -21,6 +21,7 @@ The following are the topics covered by this document.
       * [#Cultures_Methods Cultures Methods]
       * [#Categories_and_Subcategories_Methods Categories and Subcategories Methods]
       * [#Articles_Methods Articles Methods]
+  * [#Discussion Discussion]
   * [#Terms_of_Service Terms of Service]
 ----
 ==Introduction==
@@ -149,12 +150,12 @@ The API supports the following methods to send and receive Feedzilla data.
     * popular - The list will be ordered by item popularity (most popular is first).
     * none - No special order. This is the default value.
 ----
-===Articles Method===
+===Articles Methods===
 
 ====Usage Notes:====
   
-  * Query must be [http://en.wikipedia.org/wiki/URL_encoding URL Encoded].
-  * Query is limited to 100 encoded characters.
+  * Search query must be [http://en.wikipedia.org/wiki/URL_encoding URL Encoded].
+  * Search query is limited to 100 encoded characters.
 
 *Sample JSON Result for all articles methods:*
 {{{
@@ -199,7 +200,8 @@ The API supports the following methods to send and receive Feedzilla data.
   * client_source - Optional. A string representing the client that uses this request.
   * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). *Default is 0.* 
 ----
-====/v1/categories/_{category_id}_/articles/search._format_====
+===/v1/categories/_{category_id}_/articles/search._format_===
+
 *Description:* Returns most recent articles for the category given by category_id and match a specified query.
    
 *Formats:* json, rss, atom
@@ -253,6 +255,7 @@ The API supports the following methods to send and receive Feedzilla data.
   * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). *Default is 0.*
 ----
 ===/v1/articles/search.format===
+
 *Description:* Returns the most recent articles that match a specified query.
      
 *Formats: json, rss, atom
