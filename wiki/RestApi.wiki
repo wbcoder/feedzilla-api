@@ -32,18 +32,16 @@ The API presently supports the following data formats: XML, JSON, and the RSS an
 
 The following requests a JSON response format by using the "json" extension:
 
-`http://api.feedzilla.com/v1/cultures.json`
+    `http://api.feedzilla.com/v1/cultures.json`
 
 Parameter values should be converted to UTF-8 and URL encoded.
 
 All Feedzilla APIs support an optional return format parameter. Note that json is the default response format. XML is also available. Some endpoints also support a simple txt format. 
-{{{
-.json
-}}}
+
 All Feedzilla APIs support jsonp which is the json format with a callback specified, such as:
-{{{
-.json&callback=callback_method
-}}}
+
+    `.json&`*callback=callback_method*
+
 The application communicating with a resource does not need information concerning firewalls, gateways, proxies or other network devices between the application and the server holding the resource.
 
 All dates will be treated as UTC and their formats must be YYYY-DD-MM.
