@@ -148,6 +148,11 @@ Base URI: http://api.feedzilla.com
 ----
 ===Articles Method===
 
+====Usage Notes:====
+  
+  * Search query must be URL Encoded.
+  * Search query is limited to 100 encoded characters.
+
 *Sample JSON Result for all articles methods:*
 {{{
     {
@@ -172,54 +177,28 @@ Base URI: http://api.feedzilla.com
        "syndication_url":"http://feeds.feedzilla.com/en_us/news/business.rss"-
     }
 }}}
+----
+====/v1/categories/_{category_id}_/articles._format_====
 
-    Description:
+*Description:* Returns most recent articles for the category given by category_id.
 
-    Returns most recent articles for the category given by category_id.
-     
+*Formats:* json, rss, atom
 
-    URL:
+*HTTP Method(s):* GET
 
-    http://api.feedzilla.com/v1/categories/{category_id}/articles.format
+*Parameters:*
 
-     
-
-    Formats: 
-
-    json,rss,atom
-
-     
-
-    HTTP Method(s):
-
-    GET
-
-
-    Parameters:
-
-        * count -  Optional.  Specifies the number of articles to retrieve. May not be greater than 100. (Note the the number of articles returned may be smaller than the requested count). Default is 20. 
-        * since -  Optional.  Returns articles that was published since the given date. Date should be formatted as YYYY-MM-DD
-        * order - Optional. The sort order of the list to be returned. Can be one of the following: 
-                    + relevance - The list will be ordered by article relevancy (most relevant is first).
-                    + date - The list will be ordered by article publication date (most recent is first). This is the default value.
-        * client_source - Optional. A string representing the client that uses this request.
-        * (*) embed_source_in_title - Optional. A value indicating whether to embed the article source name as part of the title (using internal embedding mechanism).
-
-        * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). Default is 0.
-
-
-
-
-    Description:
-
-    Returns most recent articles for the category given by category_id and match a specified query.
-     
-
-    URL:
-
-    http://api.feedzilla.com/v1/categories/{category_id}/articles/search.format
-
-     
+  * count -  Optional.  Specifies the number of articles to retrieve. May not be greater than 100. (Note the the number of articles returned may be smaller than the requested count). *Default is 20.* 
+  * since -  Optional.  Returns articles that was published since the given date. Date should be formatted as YYYY-MM-DD
+  * order - Optional. The sort order of the list to be returned. Can be one of the following: 
+    * relevance - The list will be ordered by article relevancy (most relevant is first). *This id the default value.*
+    * date - The list will be ordered by article publication date (most recent is first).
+  * client_source - Optional. A string representing the client that uses this request.
+  * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). *Default is 0.* 
+----
+====/v1/categories/_{category_id}_/articles/search._format_====
+*Description:* Returns most recent articles for the category given by category_id and match a specified query.
+   
 
     Formats: 
 
