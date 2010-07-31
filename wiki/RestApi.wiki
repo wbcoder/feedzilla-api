@@ -89,7 +89,7 @@ The following are definitions of the resources that are exposed by the API:
 || Subcategory || Describes a subcategory of source feeds ||
 || Articles || Describes a set articles ||
 
-
+----
 ===Resource Methods===
 The API supports the following methods to send and receive Feedzilla data.
 
