@@ -276,4 +276,13 @@ The API supports the following methods to send and receive Feedzilla data.
 ==Discussion==
 To report an error with a request or response please submit an issue:
 
-    http://code.google.com/p/feedzilla-api/issues/list
+    `http://code.google.com/p/feedzilla-api/issues/list`
+
+You can join our discussion group at:
+
+    `http://groups.google.com/group/feedzilla-api`
+---
+==Terms of Service==
+You can read the terms of service here:
+
+    `http://api.feedzilla.com/tos
