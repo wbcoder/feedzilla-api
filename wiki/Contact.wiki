@@ -4,8 +4,7 @@
 The Feedzilla API is maintained by [http://www.feedzilla.com/ Feedzilla]
 
 If you need help, have a question, or want to contact us, here are some choices:
-  * @FeedzillaAPI Follow us for updates
-
+  
   * To report an error with a request or response please submit an issue:
 
     http://code.google.com/p/feedzilla-api/issues/list
