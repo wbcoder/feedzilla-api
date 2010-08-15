@@ -1,3 +1,21 @@
-#Contact Information
+#summary Contact Information
 
 = Contact Us =
+The Feedzilla API is maintained by [http://www.feedzilla.com/ Feedzilla]
+
+If you need help, have a question, or want to contact us, here are some choices:
+  * @FeedzillaAPI Follow us for updates
+
+  * To report an error with a request or response please submit an issue:
+
+    http://code.google.com/p/feedzilla-api/issues/list
+
+  * We invite you to visit our Google Group to discuss technical issues related to using the API:
+
+    http://groups.google.com/a/feedzilla.com/group/feedzilla-api
+
+  * For any other questions, email us at 
+
+    api@feedzilla.com 
+
+  * [http://twitter.com/feedzillaapi @FeedzillaAPI on Twitter - Follow us for updates]
