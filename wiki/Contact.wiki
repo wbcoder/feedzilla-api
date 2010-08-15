@@ -1,7 +1,7 @@
 #summary Contact Information
 
 = Contact Us =
-The Feedzilla API is maintained by [http://www.feedzilla.com/ Feedzilla]
+The Feedzilla API is maintained by [http://www.feedzilla.com/ Feedzilla].
 
 If you need help, have a question, or want to contact us, here are some choices:
   
@@ -13,7 +13,7 @@ If you need help, have a question, or want to contact us, here are some choices:
 
     http://groups.google.com/a/feedzilla.com/group/feedzilla-api
 
-  * For any other questions, email us at 
+  * For any other questions, email us at:
 
     api@feedzilla.com 
 
