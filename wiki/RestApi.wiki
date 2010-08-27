@@ -252,7 +252,6 @@ The API supports the following methods to send and receive Feedzilla data.
     * date - The list will be ordered by article publication date (most recent is first).
   * client_source - Optional. A string representing the client that uses this request.
   * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). *Default is 0.*
-
 ----
 ==Discussion==
 To report an error with a request or response please submit an issue:
