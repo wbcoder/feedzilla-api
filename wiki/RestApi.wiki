@@ -109,7 +109,7 @@ The API supports the following methods to send and receive Feedzilla data.
 *HTTP Method(s):* GET
 
 *Parameters:*
-  * culture_code - Optional. Restricts the results to the given culture. for instance japan is ja_jp. Default is en_us.
+  * culture_code - Optional. Restricts the results to the given culture. for instance japan is jp. Default is en_us.
   * order - Optional. The sort order of the list to be returned. Can be one of the following: 
     * popular - The list will be ordered by item popularity (most popular is first).
     * none - No special order. This is the default value.
@@ -122,7 +122,7 @@ The API supports the following methods to send and receive Feedzilla data.
 *HTTP Method(s):* GET
 
 *Parameters:*
-  * culture_code - Optional. Restricts the results to the given culture. for instance japan is ja_jp. Default is en_us.
+  * culture_code - Optional. Restricts the results to the given culture. for instance japan is jp. Default is en_us.
   * order - Optional. The sort order of the list to be returned. Can be one of the following: 
     * popular - The list will be ordered by item popularity (most popular is first).
     * none - No special order. This is the default value.
