@@ -238,7 +238,7 @@ The API supports the following methods to send and receive Feedzilla data.
 ===/v1/articles/search.format===
 *Description:* Returns the most recent articles that match a specified query.
 
-*Formats: json, rss, atom
+*Formats:* json, rss, atom
 
 *HTTP Method(s):* GET
 
