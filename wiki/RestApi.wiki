@@ -123,9 +123,9 @@ The API supports the following methods to send and receive Feedzilla data.
 
 *Parameters:*
   * culture_code - Optional. Restricts the results to the given culture. for instance japan is ja_jp. Default is en_us.
-     * order - Optional. The sort order of the list to be returned. Can be one of the following: 
-       * popular - The list will be ordered by item popularity (most popular is first).
-       * none - No special order. This is the default value.
+  * order - Optional. The sort order of the list to be returned. Can be one of the following: 
+    * popular - The list will be ordered by item popularity (most popular is first).
+    * none - No special order. This is the default value.
 ----
 ===/v1/categories/_{category_id}_/subcategories._format_===
 *Description:* Returns a list of supported subcategories for the category given by category_id.
@@ -176,7 +176,7 @@ The API supports the following methods to send and receive Feedzilla data.
 *HTTP Method(s):* GET
 
 *Parameters:*
-  * count -  Optional.  Specifies the number of articles to retrieve. May not be greater than 100. (Note the the number of articles returned may be smaller than the requested count). *Default is 20.* 
+  * count -  Optional.  Specifies the number of articles to retrieve. May not be greater than 100. (Note that the number of articles returned may be smaller than the requested count). *Default is 20.* 
   * since -  Optional.  Returns articles that was published since the given date. Date should be formatted as YYYY-MM-DD
   * order - Optional. The sort order of the list to be returned. Can be one of the following: 
     * relevance - The list will be ordered by article relevancy (most relevant is first). *This is the default value.*
@@ -186,7 +186,7 @@ The API supports the following methods to send and receive Feedzilla data.
 ----
 ===/v1/categories/_{category_id}_/articles/search._format_===
 *Description:* Returns most recent articles for the category given by category_id and match a specified query.
-   
+
 *Formats:* json, rss, atom
 
 *HTTP Method(s):* GET
@@ -220,7 +220,7 @@ The API supports the following methods to send and receive Feedzilla data.
 ===/v1/categories/_{category_id}_/subcategories/_{subcategory_id}_/articles/search._format_===
 
 *Description:* Returns most recent articles for the category specified by category_id and subcategory specified by subcategory_id and match a specified query.
-     
+
 *Formats:* json, rss, atom
 
 *HTTP Method(s):* GET
@@ -237,7 +237,7 @@ The API supports the following methods to send and receive Feedzilla data.
 ----
 ===/v1/articles/search.format===
 *Description:* Returns the most recent articles that match a specified query.
-     
+
 *Formats: json, rss, atom
 
 *HTTP Method(s):* GET
