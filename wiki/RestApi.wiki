@@ -99,6 +99,35 @@ The API supports the following methods to send and receive Feedzilla data.
 
 *Parameters:*
   * None
+
+*Examples:*
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/cultures.xml" 
+
+ * Example curl response: 
+{{{ 
+...
+	<culture>
+		<a:culture_code>pt-BR_br</a:culture_code>
+		<a:display_culture_name>Brasil</a:display_culture_name>
+		<a:english_culture_name>Brazil</a:english_culture_name>
+	</culture>
+...
+}}}
+ 
+ * Example curl call: "curl http://api.feedzilla.com/v1/cultures.json"
+
+ * Example curl response:
+{{{
+...
+	{
+		"culture_code":"au",
+		"display_culture_name":"Australlia",
+		"english_culture_name":"Australia"
+	},
+...
+}}}
+
 ----
 ===Categories and Subcategories Methods===
 ===/v1/categories._format_====
@@ -113,6 +142,37 @@ The API supports the following methods to send and receive Feedzilla data.
   * order - Optional. The sort order of the list to be returned. Can be one of the following: 
     * popular - The list will be ordered by item popularity (most popular is first).
     * none - No special order. This is the default value.
+
+*Examples:*
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories.xml"
+
+ * Example curl response:
+{{{
+...
+	<category>
+		<a:category_id>19</a:category_id>
+		<a:display_category_name>World News</a:display_category_name>
+		<a:english_category_name>World News</a:english_category_name>
+		<a:url_category_name>world-news</a:url_category_name>
+	</category>
+...
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories.json"
+
+ * Example curl response:
+{{{
+...
+	{
+		"category_id":8,
+		"display_category_name":"Science",
+		"english_category_name":"Science",
+		"url_category_name":"science"
+	},
+...
+}}}
+
 ----
 ===/v1/subcategories._format_===
 *Description:* Returns a list of supported subcategories hierarchy.
@@ -126,6 +186,38 @@ The API supports the following methods to send and receive Feedzilla data.
   * order - Optional. The sort order of the list to be returned. Can be one of the following: 
     * popular - The list will be ordered by item popularity (most popular is first).
     * none - No special order. This is the default value.
+
+*Examples:*
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/subcategories.xml"
+
+ * Example curl response:
+{{{
+...
+	<subcategory>
+		<a:category_id>2</a:category_id>
+		<a:display_subcategory_name>Accounting</a:display_subcategory_name>
+		<a:english_subcategory_name>Accounting</a:english_subcategory_name>
+		<a:subcategory_id>2</a:subcategory_id>
+		<a:url_subcategory_name>accounting</a:url_subcategory_name>
+	</subcategory>
+...
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/subcategories.json"
+
+ * Example curl response:
+{{{
+...
+	{
+		"category_id":11,
+		"display_subcategory_name":"Addiction",
+		"english_subcategory_name":"Addiction",
+		"subcategory_id":440,"url_subcategory_name":"addiction"
+	},
+...
+}}}
+
 ----
 ===/v1/categories/_{category_id}_/subcategories._format_===
 *Description:* Returns a list of supported subcategories for the category given by category_id.
@@ -138,6 +230,39 @@ The API supports the following methods to send and receive Feedzilla data.
   * order - Optional. The sort order of the list to be returned. Can be one of the following: 
     * popular - The list will be ordered by item popularity (most popular is first).
     * none - No special order. This is the default value.
+
+*Examples:*
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/26/subcategories.xml"
+
+ * Example curl response:
+{{{
+...
+	<subcategory>
+		<a:category_id>26</a:category_id>
+		<a:display_subcategory_name>Internet</a:display_subcategory_name>
+		<a:english_subcategory_name>Internet</a:english_subcategory_name>
+		<a:subcategory_id>1308</a:subcategory_id>
+		<a:url_subcategory_name>internet</a:url_subcategory_name>
+	</subcategory>
+...
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/subcategories.json"
+
+ * Example curl response:
+{{{
+...
+{
+	"category_id":13,
+	"display_subcategory_name":"Performing Arts",
+	"english_subcategory_name":"Performing Arts",
+	"subcategory_id":592,
+	"url_subcategory_name":"performing-arts"
+},
+...
+}}}
+
 ----
 ===Articles Methods===
 ====Usage Notes:====
@@ -183,6 +308,67 @@ The API supports the following methods to send and receive Feedzilla data.
     * date - The list will be ordered by article publication date (most recent is first).
   * client_source - Optional. A string representing the client that uses this request.
   * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). *Default is 0.*
+
+*Examples:*
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/26/articles.json"
+
+ * Example curl response:
+{{{
+{
+ "articles":
+ ...
+	{
+		"publish_date":"Tue, 05 Oct 2010 14:11:00 +0100",
+		"source":"tiscali.co.uk",
+		"source_url":"http:\/\/www.talktalk.co.uk\/rss\/entertainment.xml",
+		"summary":"<a href=\"http:\/\/www.talktalk.co.uk\/entertainment\/news\/reuters\/2010\/10\/05\/34the-other-guys34-stays-top-of-uk-box-office.html\"><img src=\"http:\/\/www.talktalk.co.uk\/media\/images\/feeds\/reuters\/entertainment\/2010\/10\/05\/2010-10-05t124812z_01_btre6940zkf00_rtroptp_3_ouken-uk-britain-boxoffice.jpg\" align=\"left\" alt=\"\" \/><\/a> Will Ferrell and Mark Wahlberg clung on to top spot at the box office for a third week with \"The Other Guys\" in the absence of any blockbuster newcomers, according to Screen International on Tuesday.<br clear=\"all\" \/>",
+		"title":"\"The Other Guys\" stays top of UK box office (tiscali.co.uk)",
+		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/top-news\/15587113?client_source=api&format=json"
+	},
+ ...
+}
+}}}
+ 
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/articles.rss?title_only=1"
+
+ * Example curl response:
+{{{
+?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/rss20.xsl"?>	
+...
+	<item>
+		<guid isPermaLink="false">feedzilla.com15558373</guid>
+		<link>http://news.feedzilla.com/en_us/stories/art/15558373?client_source=api&amp;format=rss</link>
+		<title>Bokeh (About)</title>
+		<description>&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/art/15558373?client_source=api&amp;share_type=0&amp;format=rss" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/15558373?client_source=api&amp;share_type=1&amp;format=rss" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/15558373?client_source=api&amp;share_type=2&amp;format=rss" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/15558373?client_source=api&amp;share_type=4&amp;format=rss" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/15558373?client_source=api&amp;share_type=3&amp;format=rss" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news/art.rss?client_source=api'&gt;Latest Art News&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;Latest News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;News Feeds&lt;/a&gt; and &lt;a href='http://news.feedzilla.com/en_us/news/art.rss?client_source=api'&gt;Latest News&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</description>
+		<source url="http://www.about.com/6/o/m/photography_p2.xml">About</source>
+		<pubDate>Tue, 05 Oct 2010 11:55:00 +0100</pubDate>
+	</item>
+...
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/articles.atom?count=10"
+
+ * Example curl response:
+{{{
+?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
+...
+	<entry>
+		<id>feedzilla.com15596191</id>
+		<title type="html">Drew Brees can't say enough about RB Ladell Betts (The Canadian Press) (Yahoo!)</title>
+		<summary type="html">METAIRIE, La. - New Orleans quarterback Drew Brees says you can't put a number on the value of Ladell Betts.&lt;br clear="all" /&gt;&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/sports/15596191?count=10&amp;client_source=api&amp;share_type=0&amp;format=atom" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/15596191?count=10&amp;client_source=api&amp;share_type=1&amp;format=atom" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/15596191?count=10&amp;client_source=api&amp;share_type=2&amp;format=atom" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/15596191?count=10&amp;client_source=api&amp;share_type=4&amp;format=atom" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/15596191?count=10&amp;client_source=api&amp;share_type=3&amp;format=atom" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news/sports.atom?count=10&amp;client_source=api'&gt;Latest Sports News&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;Latest News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;News Feeds&lt;/a&gt; and &lt;a href='http://news.feedzilla.com/en_us/news/sports.atom?count=10&amp;client_source=api'&gt;Latest News&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</summary>
+		<published>2010-10-05T13:45:00+01:00</published>
+		<updated>2010-10-05T13:45:00+01:00</updated>
+		<author><name /></author>
+		<link rel="alternate" href="http://news.feedzilla.com/en_us/stories/sports/15596191?count=10&amp;client_source=api&amp;format=atom" />
+		<rights type="text"></rights>
+		<source>
+			<title type="text">Yahoo!</title>
+			<link rel="self" href="http://sports.yahoo.com/nfl/teams/was/rss.xml" />
+		</source>
+	</entry>
+...
+}}}
 ----
 ===/v1/categories/_{category_id}_/articles/search._format_===
 *Description:* Returns most recent articles for the category given by category_id and match a specified query.
@@ -200,6 +386,71 @@ The API supports the following methods to send and receive Feedzilla data.
     * date - The list will be ordered by article publication date (most recent is first).
   * client_source - Optional. A string representing the client that uses this request.
   * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). *Default is 0.*
+
+*Examples:*
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/26/articles/search.json?q=Michael"
+
+ * Example curl response:
+{{{
+{
+ "articles":
+ ...
+	{
+	
+		"author":"By WILBORN HAMPTON",
+		"publish_date":"Tue, 05 Oct 2010 05:30:00 +0100",
+		"source":"International Herald Tribune",
+		"source_url":"http:\/\/feeds.nytimes.com\/nyt\/rss\/Arts",
+		"summary":"“The Drunkard”: Howard Thoresen, left, and Michael Hardart in this 1800s work at the Metropolitan Playhouse.",
+		"title":"Theater Review | 'The Drunkard': Saved, Before Alcoholics Anonymous (International Herald Tribune)",
+		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/top-news\/15461573?q=michael&client_source=api&format=json"
+	
+	},
+ ...
+}
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/articles/search.rss?q=Michael&title_only=1"
+
+ * Example curl response:
+{{{
+<rss version="2.0">
+...
+	<item>
+		<guid isPermaLink="false">feedzilla.com15558351</guid>
+		<link>http://news.feedzilla.com/en_us/stories/art/15558351?q=painting&amp;client_source=api&amp;format=rss</link>
+		<title>Dancing a Painting (About)</title>
+		<description>&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/art/15558351?q=painting&amp;client_source=api&amp;share_type=0&amp;format=rss" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/15558351?q=painting&amp;client_source=api&amp;share_type=1&amp;format=rss" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/15558351?q=painting&amp;client_source=api&amp;share_type=2&amp;format=rss" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/15558351?q=painting&amp;client_source=api&amp;share_type=4&amp;format=rss" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/15558351?q=painting&amp;client_source=api&amp;share_type=3&amp;format=rss" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news/art.rss?q=painting&amp;client_source=api'&gt;Art News&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;RSS&lt;/a&gt; and &lt;a href='http://news.feedzilla.com/en_us/news/art.rss?q=painting&amp;client_source=api'&gt;RSS Feed&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</description>
+		<source url="http://www.about.com/6/o/m/painting_t2.xml">About</source>
+		<pubDate>Tue, 05 Oct 2010 11:08:00 +0100</pubDate>
+	</item>
+...
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/articles/search.atom?q=Michael&count=10"
+
+ * Example curl response:
+{{{
+<feed xmlns="http://www.w3.org/2005/Atom">
+...
+	<entry>
+		<id>feedzilla.com15549562</id>
+		<title type="html">DRAYS BAY :: ALDS Link and Analysis: Michael Young, Cliff Lee, Ben Zobrist, and Jonah Keri (Sports Blog)</title>
+		<summary type="html">&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/sports/15549562?count=10&amp;q=michael&amp;client_source=api&amp;share_type=0&amp;format=atom" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/15549562?count=10&amp;q=michael&amp;client_source=api&amp;share_type=1&amp;format=atom" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/15549562?count=10&amp;q=michael&amp;client_source=api&amp;share_type=2&amp;format=atom" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/15549562?count=10&amp;q=michael&amp;client_source=api&amp;share_type=4&amp;format=atom" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/15549562?count=10&amp;q=michael&amp;client_source=api&amp;share_type=3&amp;format=atom" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news/sports.atom?count=10&amp;q=michael&amp;client_source=api'&gt;Sports News&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;RSS&lt;/a&gt; and &lt;a href='http://news.feedzilla.com/en_us/news/sports.atom?count=10&amp;q=michael&amp;client_source=api'&gt;RSS Feed&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</summary>
+		<published>2010-10-05T12:01:00+01:00</published>
+		<updated>2010-10-05T12:01:00+01:00</updated>
+		<author><name/></author>
+		<link rel="alternate" href="http://news.feedzilla.com/en_us/stories/sports/15549562?count=10&amp;q=michael&amp;client_source=api&amp;format=atom"/>
+		<rights type="text"/>
+		<source>
+			<title type="text">Sports Blog</title>
+			<link rel="self" href="http://rss.sportsblogs.org/rss/mlb.xml"/>
+		</source>
+	</entry>
+...
+}}}
+
 ----
 ===/v1/categories/_{category_id}_/subcategories/_{subcategory_id}_/articles._format_===
 *Description:* Returns most recent articles for the category specified by category_id and subcategory specified by subcategory_id.
@@ -216,6 +467,70 @@ The API supports the following methods to send and receive Feedzilla data.
     * date - The list will be ordered by article publication date (most recent is first).
   * client_source - Optional. A string representing the client that uses this request.
   * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). *Default is 0.*
+
+*Examples:*
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/26/subcategories/1303/articles.json"
+
+ * Example curl response:
+{{{
+{
+ "articles":
+ ...
+	{		
+	
+		"author":"Paul Chi",
+		"publish_date":"Tue, 05 Oct 2010 14:30:00 +0100",
+		"source":"People","source_url":"http:\/\/feeds.people.com\/people\/headlines",
+		"summary":"Still, he feels comfortable with himself, and partly credits sister Maggie<img src=\"http:\/\/feeds.feedburner.com\/~r\/people\/headlines\/~4\/p0VMYB5yIBI\" height=\"1\" width=\"1\" \/>",
+		"title":"Jake Gyllenhaal Dreads Turning 30 - Sort Of (People)",
+		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/top-news\/celebrities\/15616550?client_source=api&format=json"
+	
+	},
+...
+}
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/subcategories/589/articles.rss?title_only=1"
+
+ * Example curl response:
+{{{
+<rss version="2.0">
+...
+	<item>
+		<guid isPermaLink="false">feedzilla.com14266379</guid>
+		<link>http://news.feedzilla.com/en_us/stories/art/dance/14266379?client_source=api&amp;format=rss</link>
+		<title>A New Graeme Murphy Dance Company (Arts Journal)</title>
+		<description>&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14266379?client_source=api&amp;share_type=0&amp;format=rss" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14266379?client_source=api&amp;share_type=1&amp;format=rss" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14266379?client_source=api&amp;share_type=2&amp;format=rss" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14266379?client_source=api&amp;share_type=4&amp;format=rss" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14266379?client_source=api&amp;share_type=3&amp;format=rss" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news/art/dance.rss?client_source=api'&gt;Latest Art - Dance Stories&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;Latest News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;News Feeds&lt;/a&gt; and &lt;a href='http://news.feedzilla.com/en_us/news/art/dance.rss?client_source=api'&gt;Latest News&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</description>
+		<source url="http://www.artsjournal.com/artsjournal1/dance.xml">Arts Journal</source>
+		<pubDate>Fri, 01 Oct 2010 06:33:00 +0100</pubDate>
+	</item>
+...
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/subcategories/1370/articles.atom?count=10"
+
+ * Example curl response:
+{{{
+?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
+...
+	<entry>
+		<id>feedzilla.com15621161</id>
+		<title type="html">Knicks focus on defense thanks to Dan D'Antoni (NY Daily News - Knicks Knation)</title>
+		<summary type="html">PARIS - Dan D'Antoni's voice is being heard more and more in training camp and it's usually when the Knicks are working on defense. It's a welcomed sight for a...&lt;br clear="all" /&gt;&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15621161?count=10&amp;client_source=api&amp;share_type=0&amp;format=atom" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15621161?count=10&amp;client_source=api&amp;share_type=1&amp;format=atom" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15621161?count=10&amp;client_source=api&amp;share_type=2&amp;format=atom" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15621161?count=10&amp;client_source=api&amp;share_type=4&amp;format=atom" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15621161?count=10&amp;client_source=api&amp;share_type=3&amp;format=atom" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news/sports/basketball-nba.atom?count=10&amp;client_source=api'&gt;Sports - Basketball - Nba News&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;RSS&lt;/a&gt; and &lt;a href='http://news.feedzilla.com/en_us/news/sports/basketball-nba.atom?count=10&amp;client_source=api'&gt;RSS Feed&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</summary>
+		<published>2010-10-05T15:43:00+01:00</published>
+		<updated>2010-10-05T15:43:00+01:00</updated>
+		<author><name /></author>	
+		<link rel="alternate" href="http://news.feedzilla.com/en_us/stories/sports/basketball-nba/15621161?count=10&amp;client_source=api&amp;format=atom" />
+		<rights type="text"></rights>
+		<source>
+			<title type="text">NY Daily News - Knicks Knation</title>
+			<link rel="self" href="http://www.nydailynews.com/blogs/knicks/rss.xml" />
+		</source>
+	</entry>
+...
+}}}
+
 ----
 ===/v1/categories/_{category_id}_/subcategories/_{subcategory_id}_/articles/search._format_===
 
@@ -234,6 +549,71 @@ The API supports the following methods to send and receive Feedzilla data.
     * date - The list will be ordered by article publication date (most recent is first). 
   * client_source - Optional. A string representing the client that uses this request.
   * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). *Default is 0.*
+
+*Examples:*
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/26/subcategories/1303/articles/search.json?q=Michael"
+
+ * Example curl response:
+{{{
+{
+ "articles":
+ ...
+	{		
+	
+		"author":"Tim Nudd and Michele Stueven",
+		"publish_date":"Tue, 05 Oct 2010 15:00:00 +0100",
+		"source":"People","source_url":"http:\/\/feeds.people.com\/people\/headlines",
+		"summary":"The comedian and her Dancing With the Stars partner Louis van Amstel talk about being tormented as kids<img src=\"http:\/\/feeds.feedburner.com\/~r\/people\/headlines\/~4\/c60AtSrYfSs\" height=\"1\" width=\"1\" \/>",
+		"title":"Margaret Cho: 'I Didn't Want to Live' When I Was Bullied (People)",
+		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/top-news\/celebrities\/15616556?q=michael&client_source=api&format=json"
+	
+	},
+...
+}
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/subcategories/1370/articles/search.rss?q=Michael&title_only=1"
+
+ * Example curl response:
+{{{
+<rss version="2.0">
+...
+
+	<item>
+		<guid isPermaLink="false">feedzilla.com15620501</guid>
+		<link>http://news.feedzilla.com/en_us/stories/sports/basketball-nba/15620501?q=michael&amp;client_source=api&amp;format=rss</link>
+		<title>Turiaf excited about Knicks new roster (NBA)</title>
+		<description>&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15620501?q=michael&amp;client_source=api&amp;share_type=0&amp;format=rss" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15620501?q=michael&amp;client_source=api&amp;share_type=1&amp;format=rss" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15620501?q=michael&amp;client_source=api&amp;share_type=2&amp;format=rss" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15620501?q=michael&amp;client_source=api&amp;share_type=4&amp;format=rss" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/sports/basketball-nba/15620501?q=michael&amp;client_source=api&amp;share_type=3&amp;format=rss" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news/sports/basketball-nba.rss?q=michael&amp;client_source=api'&gt;Sports - Basketball - Nba News&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;Latest News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;News Feeds&lt;/a&gt; and &lt;a href='http://news.feedzilla.com/en_us/news/sports/basketball-nba.rss?q=michael&amp;client_source=api'&gt;Latest News&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</description>
+		<source url="http://www.nba.com/rss/nba_rss.xml">NBA</source>
+		<pubDate>Tue, 05 Oct 2010 15:27:00 +0100</pubDate>
+	</item>
+	
+...
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/subcategories/589/articles/search.atom?q=Michael&count=10"
+
+ * Example curl response:
+{{{
+...
+	<entry>
+		<id>feedzilla.com14987817</id>
+		<title type="html">Washington Ballet Ditches Live Music For 2010/11 (Arts Journal)</title>
+		<summary type="html">The company's budget is $8 million, down from $8.3 million last year and $8.5 million in 2008....&lt;br clear="all" /&gt;&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14987817?count=10&amp;q=painting&amp;client_source=api&amp;share_type=0&amp;format=atom" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14987817?count=10&amp;q=painting&amp;client_source=api&amp;share_type=1&amp;format=atom" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14987817?count=10&amp;q=painting&amp;client_source=api&amp;share_type=2&amp;format=atom" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14987817?count=10&amp;q=painting&amp;client_source=api&amp;share_type=4&amp;format=atom" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/art/dance/14987817?count=10&amp;q=painting&amp;client_source=api&amp;share_type=3&amp;format=atom" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news/art/dance.atom?count=10&amp;q=painting&amp;client_source=api'&gt;Latest Art - Dance Stories&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;Latest News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;News Feeds&lt;/a&gt; and &lt;a href='http://news.feedzilla.com/en_us/news/art/dance.atom?count=10&amp;q=painting&amp;client_source=api'&gt;Latest News&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</summary>
+		<published>2010-10-03T16:52:00+01:00</published>
+		<updated>2010-10-03T16:52:00+01:00</updated>
+		<author><name/></author>
+		<link rel="alternate" href="http://news.feedzilla.com/en_us/stories/art/dance/14987817?count=10&amp;q=painting&amp;client_source=api&amp;format=atom"/>
+		<rights type="text"/>
+		<source>
+			<title type="text">Arts Journal</title>
+			<link rel="self" href="http://www.artsjournal.com/artsjournal1/dance.xml"/>
+		</source>
+	</entry>
+...
+}}}
+
 ----
 ===/v1/articles/search.format===
 *Description:* Returns the most recent articles that match a specified query.
@@ -252,6 +632,77 @@ The API supports the following methods to send and receive Feedzilla data.
     * date - The list will be ordered by article publication date (most recent is first).
   * client_source - Optional. A string representing the client that uses this request.
   * title_only - Optional. A value (1 - true, 0 - false) indicating whether to fetch article title only (no summary or content). *Default is 0.*
+
+*Examples:*
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/articles/search.json?q=Michael"
+
+ * Example curl response:
+{{{
+{
+ "articles":
+ ...
+	{		
+
+		"author":"Michael Maloney",
+		"publish_date":"Tue, 05 Oct 2010 11:30:00 +0100",
+		"source":"television",
+		"source_url":"http:\/\/www.tvsquad.com\/rss.xml",
+		"summary":"<p>Filed under: <a href=\"http:\/\/www.tvsquad.com\/category\/features\/\" rel=\"tag\">Features<\/a>, <a href=\"http:\/\/www.tvsquad.com\/category\/celebrity-interviews\/\" rel=\"tag\">Celebrity Interviews<\/a><\/p><img hspace=\"4\" border=\"1\" align=\"right\" vspace=\"4\" alt=\"Carrie Ann Inaba, Len Goodman, Bruno Tonioli \" src=\"http:\/\/www.blogcdn.com\/www.tvsquad.com\/media\/2010\/10\/3judges2011.jpg\" \/>Were the <a href=\"http:\/\/www.tvsquad.com\/tag\/dancing+with+the+stars\/\">'Dancing With the Stars?'<\/a> judges a bit kinder on Monday night's week 3? <br \/>\u000a<br \/>\u000aThe stars and dancers think so, but not because <a href=\"http:\/\/television.aol.com\/celebs\/len-goodman\/576360\/main\">Len Goodman<\/a> and <a href=\"http:\/\/television.aol.com\/celebs\/bruno-tonioli\/1906818\/main\">Bruno Tonioli<\/a> were trying to make up for being extremely harsh on <a href=\"http:\/\/www.tvsquad.com\/2010\/09\/29\/michael-bolton-dancing-with-the-stars-judge-apology\/\">Michael Bolton<\/a> last week. (Bolton was ejected after dancing a disappointing jive that Bruno called the worst in 11 seasons of 'DWTS.')<br \/>\u000a<br \/>\u000a\"Last week some of the comments were definitely harsh,\" said <a href=\"http:\/\/television.aol.com\/celebs\/anna-trebunskaya\/563094\/main\">Anna Trebunskaya<\/a>. \"This week everyone got scared of those comments so they worked really hard and we had a great show as a result. We [all] did our absolute best.\"<p>&nbsp;<\/p><p><a href=\"http:\/\/www.tvsquad.com\/2010\/10\/05\/on-the-scene-are-the-dancing-with-the-stars-judges-getting\/\" rel=\"bookmark\"title=\"Permanent link to this entry\">Permalink<\/a>&nbsp;|&nbsp;<a href=\"http:\/\/www.tvsquad.com\/forward\/19660741\/\" title=\"Send this entry to a friend via email\">Email this<\/a>&nbsp;|&nbsp;<a href=\"http:\/\/www.technorati.com\/cosmos\/search.html?rank=&fc=1&url=http:\/\/www.tvsquad.com\/2010\/10\/05\/on-the-scene-are-the-dancing-with-the-stars-judges-getting\/\" title=\"Linking Blogs\">Linking&nbsp;Blogs<\/a>&nbsp;|&nbsp;<a href=\"http:\/\/www.tvsquad.com\/2010\/10\/05\/on-the-scene-are-the-dancing-with-the-stars-judges-getting\/#comments\" title=\"View reader comments on this entry\">Comments<\/a><\/p>","title":"On the Scene: Are the 'Dancing With the Stars' Judges Getting ... Nicer? (television)","url":"http:\/\/news.feedzilla.com\/en_us\/stories\/15617745?q=michael&client_source=api&format=json"},{"author":"Adam","publish_date":"Tue, 05 Oct 2010 12:26:00 +0100","source":"Showbiz Spy","source_url":"http:\/\/www.showbizspy.com\/feed","summary":"RACHEL McAdams is reportedly dating Michael Sheen!\u000aThe pair apparently struck up a romance after meeting at a party for Sheen&#8217;s upcoming movie Beautiful Boy.\u000aRachel and Michael have been seen &#8220;holding hands and with eyes only for each other&#8221; while in Toronto, Canada, according to New York Post gossip column Page Six.\u000aMcAdams, 31, used to date [...]",
+		"title":"RACHEL MCADAMS DATING MICHAEL SHEEN? (Showbiz Spy)",
+		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/15583098?q=michael&client_source=api&format=json"
+
+	
+	},
+...
+}
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/articles/search.rss?q=Michael&title_only=1"
+
+ * Example curl response:
+{{{
+<rss version="2.0">
+...
+
+	<item>
+		<guid isPermaLink="false">feedzilla.com15622757</guid>
+		<link>http://news.feedzilla.com/en_us/stories/15622757?q=michael&amp;client_source=api&amp;format=rss</link>
+		<title>September 2010 Top Ten: Our Most Popular Posts (Practical Ecommerce)</title>
+		<description>&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/15622757?q=michael&amp;client_source=api&amp;share_type=0&amp;format=rss" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/15622757?q=michael&amp;client_source=api&amp;share_type=1&amp;format=rss" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/15622757?q=michael&amp;client_source=api&amp;share_type=2&amp;format=rss" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/15622757?q=michael&amp;client_source=api&amp;share_type=4&amp;format=rss" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/15622757?q=michael&amp;client_source=api&amp;share_type=3&amp;format=rss" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news.rss?q=michael&amp;client_source=api'&gt;Latest 'Michael' News&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;RSS Feeds&lt;/a&gt; and &lt;a href='http://www.feedzilla.com/free_news_widgets.asp'&gt;Widgets&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</description>
+		<source url="http://www.practicalecommerce.com/articles.rss">Practical Ecommerce</source>
+		<pubDate>Tue, 05 Oct 2010 15:47:00 +0100</pubDate>
+	</item>
+
+
+...
+}}}
+
+ * Example curl call: "curl http://api.feedzilla.com/v1/articles/search.atom?q=Michael&count=10"
+
+ * Example curl response:
+{{{
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
+...
+	
+	<entry>
+		<id>feedzilla.com15595807</id>
+		<title type="html">NBA 2K11 Ships (Gameinfowire.com)</title>
+		<summary type="html">Relive Michael Jordan’s greatest moments with the all-new Jordan Challenge and more in NBA 2K11&lt;br clear="all" /&gt;&lt;div&gt;Share With Friends: &lt;a href="http://news.feedzilla.com/en_us/share/15595807?count=10&amp;q=michael&amp;client_source=api&amp;share_type=0&amp;format=atom" title="Share on Facebook" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/facebook.gif" border="0" width="16" height="16" alt="Share on Facebook" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/15595807?count=10&amp;q=michael&amp;client_source=api&amp;share_type=1&amp;format=atom" title="Tweet This" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/twitter.gif" border="0" width="16" height="16" alt="Tweet This" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/15595807?count=10&amp;q=michael&amp;client_source=api&amp;share_type=2&amp;format=atom" title="Post to Google-Buzz" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/googlebuzz.gif" border="0" width="16" height="16" alt="Post to Google-Buzz" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/15595807?count=10&amp;q=michael&amp;client_source=api&amp;share_type=4&amp;format=atom" title="Send on Gmail" target="_blank"&gt;&lt;img src="http://cache.addthiscdn.com/icons/v1/thumbs/gmail.gif" border="0" width="16" height="16" alt="Send on Gmail" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt;&lt;a href="http://news.feedzilla.com/en_us/share/15595807?count=10&amp;q=michael&amp;client_source=api&amp;share_type=3&amp;format=atom" title="Subscribe to This Feed" target="_blank"&gt;&lt;img src="http://proxy.feedzilla.com/images/rss-16x16.png" border="0" width="16" height="16" alt="Subscribe to This Feed" style="border:0; veritcal-align:middle; " align="absbottom" vspace="1" hspace="2" /&gt;&lt;/a&gt; | &lt;a href='http://news.feedzilla.com/en_us/news.atom?count=10&amp;q=michael&amp;client_source=api'&gt;'Michael' News&lt;/a&gt;, &lt;a href='http://code.google.com/p/feedzilla-api/'&gt;News API&lt;/a&gt;, &lt;a href='http://www.feedzilla.com/rss.asp'&gt;RSS&lt;/a&gt; and &lt;a href='http://news.feedzilla.com/en_us/news.atom?count=10&amp;q=michael&amp;client_source=api'&gt;RSS Feed&lt;/a&gt; on &lt;a href='http://www.feedzilla.com/'&gt;Feedzilla.com&lt;/a&gt;&lt;/div&gt;</summary>
+		<published>2010-10-05T14:31:00+01:00</published>
+		<updated>2010-10-05T14:31:00+01:00</updated>
+		<author><name /></author>
+		<link rel="alternate" href="http://news.feedzilla.com/en_us/stories/15595807?count=10&amp;q=michael&amp;client_source=api&amp;format=atom" />	
+		<rights type="text"></rights>
+		<source>
+			<title type="text">Gameinfowire.com</title>
+			<link rel="self" href="http://www.gameinfowire.com/news.xml" />
+		</source>
+	</entry>
+	
+...
+}}}
+
 ----
 ==Discussion==
 To report an error with a request or response please submit an issue:
