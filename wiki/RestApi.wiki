@@ -155,20 +155,21 @@ The API supports the following methods to send and receive Feedzilla data.
 		<a:english_category_name>World News</a:english_category_name>
 		<a:url_category_name>world-news</a:url_category_name>
 	</category>
+
 }}}
 
  * Example curl call: "curl http://api.feedzilla.com/v1/categories.json"
 
  * Example curl response:
 {{{
-...
+
 	{
 		"category_id":8,
 		"display_category_name":"Science",
 		"english_category_name":"Science",
 		"url_category_name":"science"
 	},
-...
+
 }}}
 
 ----
@@ -191,7 +192,7 @@ The API supports the following methods to send and receive Feedzilla data.
 
  * Example curl response:
 {{{
-...
+
 	<subcategory>
 		<a:category_id>2</a:category_id>
 		<a:display_subcategory_name>Accounting</a:display_subcategory_name>
@@ -199,21 +200,21 @@ The API supports the following methods to send and receive Feedzilla data.
 		<a:subcategory_id>2</a:subcategory_id>
 		<a:url_subcategory_name>accounting</a:url_subcategory_name>
 	</subcategory>
-...
+
 }}}
 
  * Example curl call: "curl http://api.feedzilla.com/v1/subcategories.json"
 
  * Example curl response:
 {{{
-...
+
 	{
 		"category_id":11,
 		"display_subcategory_name":"Addiction",
 		"english_subcategory_name":"Addiction",
 		"subcategory_id":440,"url_subcategory_name":"addiction"
 	},
-...
+
 }}}
 
 ----
@@ -235,7 +236,7 @@ The API supports the following methods to send and receive Feedzilla data.
 
  * Example curl response:
 {{{
-...
+
 	<subcategory>
 		<a:category_id>26</a:category_id>
 		<a:display_subcategory_name>Internet</a:display_subcategory_name>
@@ -243,22 +244,22 @@ The API supports the following methods to send and receive Feedzilla data.
 		<a:subcategory_id>1308</a:subcategory_id>
 		<a:url_subcategory_name>internet</a:url_subcategory_name>
 	</subcategory>
-...
+
 }}}
 
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/subcategories.json"
 
  * Example curl response:
 {{{
-...
-{
+
+    {
 	"category_id":13,
 	"display_subcategory_name":"Performing Arts",
 	"english_subcategory_name":"Performing Arts",
 	"subcategory_id":592,
 	"url_subcategory_name":"performing-arts"
-},
-...
+    },
+
 }}}
 
 ----
@@ -314,8 +315,8 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 {
- "articles":
- ...
+ "articles":[
+ 
 	{
 		"publish_date":"Tue, 05 Oct 2010 14:11:00 +0100",
 		"source":"tiscali.co.uk",
@@ -323,9 +324,9 @@ The API supports the following methods to send and receive Feedzilla data.
 		"summary":"<a href=\"http:\/\/www.talktalk.co.uk\/entertainment\/news\/reuters\/2010\/10\/05\/34the-other-guys34-stays-top-of-uk-box-office.html\"><img src=\"http:\/\/www.talktalk.co.uk\/media\/images\/feeds\/reuters\/entertainment\/2010\/10\/05\/2010-10-05t124812z_01_btre6940zkf00_rtroptp_3_ouken-uk-britain-boxoffice.jpg\" align=\"left\" alt=\"\" \/><\/a> Will Ferrell and Mark Wahlberg clung on to top spot at the box office for a third week with \"The Other Guys\" in the absence of any blockbuster newcomers, according to Screen International on Tuesday.<br clear=\"all\" \/>",
 		"title":"\"The Other Guys\" stays top of UK box office (tiscali.co.uk)",
 		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/top-news\/15587113?client_source=api&format=json"
-	},
- ...
+	},]
 }
+
 }}}
  
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/articles.rss?title_only=1"
@@ -333,7 +334,7 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 ?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/rss20.xsl"?>	
-...
+
 	<item>
 		<guid isPermaLink="false">feedzilla.com15558373</guid>
 		<link>http://news.feedzilla.com/en_us/stories/art/15558373?client_source=api&amp;format=rss</link>
@@ -342,7 +343,7 @@ The API supports the following methods to send and receive Feedzilla data.
 		<source url="http://www.about.com/6/o/m/photography_p2.xml">About</source>
 		<pubDate>Tue, 05 Oct 2010 11:55:00 +0100</pubDate>
 	</item>
-...
+
 }}}
 
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/articles.atom?count=10"
@@ -350,7 +351,7 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 ?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
-...
+
 	<entry>
 		<id>feedzilla.com15596191</id>
 		<title type="html">Drew Brees can't say enough about RB Ladell Betts (The Canadian Press) (Yahoo!)</title>
@@ -365,7 +366,7 @@ The API supports the following methods to send and receive Feedzilla data.
 			<link rel="self" href="http://sports.yahoo.com/nfl/teams/was/rss.xml" />
 		</source>
 	</entry>
-...
+
 }}}
 ----
 ===/v1/categories/_{category_id}_/articles/search._format_===
@@ -392,8 +393,8 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 {
- "articles":
- ...
+ "articles":[
+ 
 	{
 	
 		"author":"By WILBORN HAMPTON",
@@ -404,8 +405,8 @@ The API supports the following methods to send and receive Feedzilla data.
 		"title":"Theater Review | 'The Drunkard': Saved, Before Alcoholics Anonymous (International Herald Tribune)",
 		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/top-news\/15461573?q=michael&client_source=api&format=json"
 	
-	},
- ...
+	},]
+ 
 }
 }}}
 
@@ -414,7 +415,7 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 <rss version="2.0">
-...
+
 	<item>
 		<guid isPermaLink="false">feedzilla.com15558351</guid>
 		<link>http://news.feedzilla.com/en_us/stories/art/15558351?q=painting&amp;client_source=api&amp;format=rss</link>
@@ -423,7 +424,7 @@ The API supports the following methods to send and receive Feedzilla data.
 		<source url="http://www.about.com/6/o/m/painting_t2.xml">About</source>
 		<pubDate>Tue, 05 Oct 2010 11:08:00 +0100</pubDate>
 	</item>
-...
+
 }}}
 
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/articles/search.atom?q=Michael&count=10"
@@ -431,7 +432,7 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 <feed xmlns="http://www.w3.org/2005/Atom">
-...
+
 	<entry>
 		<id>feedzilla.com15549562</id>
 		<title type="html">DRAYS BAY :: ALDS Link and Analysis: Michael Young, Cliff Lee, Ben Zobrist, and Jonah Keri (Sports Blog)</title>
@@ -446,7 +447,7 @@ The API supports the following methods to send and receive Feedzilla data.
 			<link rel="self" href="http://rss.sportsblogs.org/rss/mlb.xml"/>
 		</source>
 	</entry>
-...
+
 }}}
 
 ----
@@ -473,8 +474,8 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 {
- "articles":
- ...
+ "articles":[
+ 
 	{		
 	
 		"author":"Paul Chi",
@@ -484,8 +485,8 @@ The API supports the following methods to send and receive Feedzilla data.
 		"title":"Jake Gyllenhaal Dreads Turning 30 - Sort Of (People)",
 		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/top-news\/celebrities\/15616550?client_source=api&format=json"
 	
-	},
-...
+	},]
+
 }
 }}}
 
@@ -494,7 +495,7 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 <rss version="2.0">
-...
+
 	<item>
 		<guid isPermaLink="false">feedzilla.com14266379</guid>
 		<link>http://news.feedzilla.com/en_us/stories/art/dance/14266379?client_source=api&amp;format=rss</link>
@@ -503,7 +504,7 @@ The API supports the following methods to send and receive Feedzilla data.
 		<source url="http://www.artsjournal.com/artsjournal1/dance.xml">Arts Journal</source>
 		<pubDate>Fri, 01 Oct 2010 06:33:00 +0100</pubDate>
 	</item>
-...
+
 }}}
 
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/subcategories/1370/articles.atom?count=10"
@@ -511,7 +512,7 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 ?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
-...
+
 	<entry>
 		<id>feedzilla.com15621161</id>
 		<title type="html">Knicks focus on defense thanks to Dan D'Antoni (NY Daily News - Knicks Knation)</title>
@@ -526,7 +527,7 @@ The API supports the following methods to send and receive Feedzilla data.
 			<link rel="self" href="http://www.nydailynews.com/blogs/knicks/rss.xml" />
 		</source>
 	</entry>
-...
+
 }}}
 
 ----
@@ -555,8 +556,8 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 {
- "articles":
- ...
+ "articles":[
+ 
 	{		
 	
 		"author":"Tim Nudd and Michele Stueven",
@@ -566,8 +567,8 @@ The API supports the following methods to send and receive Feedzilla data.
 		"title":"Margaret Cho: 'I Didn't Want to Live' When I Was Bullied (People)",
 		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/top-news\/celebrities\/15616556?q=michael&client_source=api&format=json"
 	
-	},
-...
+	},]
+
 }
 }}}
 
@@ -576,7 +577,7 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 <rss version="2.0">
-...
+
 
 	<item>
 		<guid isPermaLink="false">feedzilla.com15620501</guid>
@@ -587,14 +588,14 @@ The API supports the following methods to send and receive Feedzilla data.
 		<pubDate>Tue, 05 Oct 2010 15:27:00 +0100</pubDate>
 	</item>
 	
-...
+
 }}}
 
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/subcategories/589/articles/search.atom?q=Michael&count=10"
 
  * Example curl response:
 {{{
-...
+
 	<entry>
 		<id>feedzilla.com14987817</id>
 		<title type="html">Washington Ballet Ditches Live Music For 2010/11 (Arts Journal)</title>
@@ -609,7 +610,7 @@ The API supports the following methods to send and receive Feedzilla data.
 			<link rel="self" href="http://www.artsjournal.com/artsjournal1/dance.xml"/>
 		</source>
 	</entry>
-...
+
 }}}
 
 ----
@@ -638,8 +639,8 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 {
- "articles":
- ...
+ "articles":[
+ 
 	{		
 
 		"author":"Michael Maloney",
@@ -651,8 +652,8 @@ The API supports the following methods to send and receive Feedzilla data.
 		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/15583098?q=michael&client_source=api&format=json"
 
 	
-	},
-...
+	},]
+
 }
 }}}
 
@@ -661,7 +662,7 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 <rss version="2.0">
-...
+
 
 	<item>
 		<guid isPermaLink="false">feedzilla.com15622757</guid>
@@ -673,7 +674,7 @@ The API supports the following methods to send and receive Feedzilla data.
 	</item>
 
 
-...
+
 }}}
 
  * Example curl call: "curl http://api.feedzilla.com/v1/articles/search.atom?q=Michael&count=10"
