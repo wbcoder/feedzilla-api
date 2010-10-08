@@ -106,26 +106,25 @@ The API supports the following methods to send and receive Feedzilla data.
 
  * Example curl response: 
 {{{ 
-...
+
 	<culture>
 		<a:culture_code>pt-BR_br</a:culture_code>
 		<a:display_culture_name>Brasil</a:display_culture_name>
 		<a:english_culture_name>Brazil</a:english_culture_name>
 	</culture>
-...
+
 }}}
  
  * Example curl call: "curl http://api.feedzilla.com/v1/cultures.json"
 
  * Example curl response:
 {{{
-...
 	{
 		"culture_code":"au",
 		"display_culture_name":"Australlia",
 		"english_culture_name":"Australia"
 	},
-...
+
 }}}
 
 ----
@@ -149,14 +148,13 @@ The API supports the following methods to send and receive Feedzilla data.
 
  * Example curl response:
 {{{
-...
+
 	<category>
 		<a:category_id>19</a:category_id>
 		<a:display_category_name>World News</a:display_category_name>
 		<a:english_category_name>World News</a:english_category_name>
 		<a:url_category_name>world-news</a:url_category_name>
 	</category>
-...
 }}}
 
  * Example curl call: "curl http://api.feedzilla.com/v1/categories.json"
@@ -683,7 +681,7 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
-...
+
 	
 	<entry>
 		<id>feedzilla.com15595807</id>
@@ -700,7 +698,7 @@ The API supports the following methods to send and receive Feedzilla data.
 		</source>
 	</entry>
 	
-...
+
 }}}
 
 ----
