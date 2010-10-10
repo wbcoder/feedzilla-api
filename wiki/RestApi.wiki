@@ -102,9 +102,8 @@ The API supports the following methods to send and receive Feedzilla data.
 
 *Examples:*
 
- * Example curl call: "curl http://api.feedzilla.com/v1/cultures.xml" 
+ * XML format: "curl http://api.feedzilla.com/v1/cultures.xml" 
 
- * Example curl response: 
 {{{ 
 
 	<culture>
@@ -115,9 +114,8 @@ The API supports the following methods to send and receive Feedzilla data.
 
 }}}
  
- * Example curl call: "curl http://api.feedzilla.com/v1/cultures.json"
+ * JSON format: "curl http://api.feedzilla.com/v1/cultures.json"
 
- * Example curl response:
 {{{
 	{
 		"culture_code":"au",
@@ -144,9 +142,8 @@ The API supports the following methods to send and receive Feedzilla data.
 
 *Examples:*
 
- * Example curl call: "curl http://api.feedzilla.com/v1/categories.xml"
+ * XML format: "curl http://api.feedzilla.com/v1/categories.xml"
 
- * Example curl response:
 {{{
 
 	<category>
@@ -158,9 +155,8 @@ The API supports the following methods to send and receive Feedzilla data.
 
 }}}
 
- * Example curl call: "curl http://api.feedzilla.com/v1/categories.json"
+ * JSON format: "curl http://api.feedzilla.com/v1/categories.json"
 
- * Example curl response:
 {{{
 
 	{
@@ -188,9 +184,8 @@ The API supports the following methods to send and receive Feedzilla data.
 
 *Examples:*
 
- * Example curl call: "curl http://api.feedzilla.com/v1/subcategories.xml"
+ * XML format: "curl http://api.feedzilla.com/v1/subcategories.xml"
 
- * Example curl response:
 {{{
 
 	<subcategory>
@@ -203,9 +198,8 @@ The API supports the following methods to send and receive Feedzilla data.
 
 }}}
 
- * Example curl call: "curl http://api.feedzilla.com/v1/subcategories.json"
+ * JSON format: "curl http://api.feedzilla.com/v1/subcategories.json"
 
- * Example curl response:
 {{{
 
 	{
@@ -232,9 +226,8 @@ The API supports the following methods to send and receive Feedzilla data.
 
 *Examples:*
 
- * Example curl call: "curl http://api.feedzilla.com/v1/categories/26/subcategories.xml"
+ * XML format: "curl http://api.feedzilla.com/v1/categories/26/subcategories.xml"
 
- * Example curl response:
 {{{
 
 	<subcategory>
@@ -247,9 +240,8 @@ The API supports the following methods to send and receive Feedzilla data.
 
 }}}
 
- * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/subcategories.json"
+ * JSON format: "curl http://api.feedzilla.com/v1/categories/13/subcategories.json"
 
- * Example curl response:
 {{{
 
     {
@@ -321,7 +313,7 @@ The API supports the following methods to send and receive Feedzilla data.
 		"publish_date":"Tue, 05 Oct 2010 14:11:00 +0100",
 		"source":"tiscali.co.uk",
 		"source_url":"http:\/\/www.talktalk.co.uk\/rss\/entertainment.xml",
-		"summary":"<a href=\"http:\/\/www.talktalk.co.uk\/entertainment\/news\/reuters\/2010\/10\/05\/34the-other-guys34-stays-top-of-uk-box-office.html\"><img src=\"http:\/\/www.talktalk.co.uk\/media\/images\/feeds\/reuters\/entertainment\/2010\/10\/05\/2010-10-05t124812z_01_btre6940zkf00_rtroptp_3_ouken-uk-britain-boxoffice.jpg\" align=\"left\" alt=\"\" \/><\/a> Will Ferrell and Mark Wahlberg clung on to top spot at the box office for a third week with \"The Other Guys\" in the absence of any blockbuster newcomers, according to Screen International on Tuesday.<br clear=\"all\" \/>",
+		"summary":"Will Ferrell and Mark Wahlberg clung on to top spot at the box office for a third week with \"The Other Guys\" in the absence of any blockbuster newcomers, according to Screen International on Tuesday.",
 		"title":"\"The Other Guys\" stays top of UK box office (tiscali.co.uk)",
 		"url":"http:\/\/news.feedzilla.com\/en_us\/stories\/top-news\/15587113?client_source=api&format=json"
 	},]
