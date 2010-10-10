@@ -332,8 +332,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/articles.rss?title_only=1"
 
  * Example curl response:
-
+{{{
 ?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/rss20.xsl"?>	
+}}}
 {{{
 	<item>
 		<guid isPermaLink="false">feedzilla.com15558373</guid>
@@ -349,8 +350,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/articles.atom?count=10"
 
  * Example curl response:
-
+{{{
 ?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
+}}}
 {{{
 	<entry>
 		<id>feedzilla.com15596191</id>
@@ -413,8 +415,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/articles/search.rss?q=Michael&title_only=1"
 
  * Example curl response:
-
+{{{
 <rss version="2.0">
+}}}
 {{{
 	<item>
 		<guid isPermaLink="false">feedzilla.com15558351</guid>
@@ -430,8 +433,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/articles/search.atom?q=Michael&count=10"
 
  * Example curl response:
-
+{{{
 <feed xmlns="http://www.w3.org/2005/Atom">
+}}}
 {{{
 	<entry>
 		<id>feedzilla.com15549562</id>
@@ -495,7 +499,8 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl response:
 {{{
 <rss version="2.0">
-
+}}}
+{{{
 	<item>
 		<guid isPermaLink="false">feedzilla.com14266379</guid>
 		<link>http://news.feedzilla.com/en_us/stories/art/dance/14266379?client_source=api&amp;format=rss</link>
@@ -510,8 +515,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/subcategories/1370/articles.atom?count=10"
 
  * Example curl response:
-
+{{{
 ?<?xml version="1.0" encoding="utf-8"?> <?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
+}}}
 {{{
 
 	<entry>
@@ -576,8 +582,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/subcategories/1370/articles/search.rss?q=Michael&title_only=1"
 
  * Example curl response:
-
+{{{
 <rss version="2.0">
+}}}
 {{{
 	<item>
 		<guid isPermaLink="false">feedzilla.com15620501</guid>
@@ -659,8 +666,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/articles/search.rss?q=Michael&title_only=1"
 
  * Example curl response:
-
+{{{
 <rss version="2.0">
+}}}
 {{{
 	<item>
 		<guid isPermaLink="false">feedzilla.com15622757</guid>
@@ -678,8 +686,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/articles/search.atom?q=Michael&count=10"
 
  * Example curl response:
-
+{{{
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
+}}}
 {{{	
 	<entry>
 		<id>feedzilla.com15595807</id>
