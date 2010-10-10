@@ -332,9 +332,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/articles.rss?title_only=1"
 
  * Example curl response:
-{{{
-?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/rss20.xsl"?>	
 
+?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/rss20.xsl"?>	
+{{{
 	<item>
 		<guid isPermaLink="false">feedzilla.com15558373</guid>
 		<link>http://news.feedzilla.com/en_us/stories/art/15558373?client_source=api&amp;format=rss</link>
@@ -349,9 +349,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/articles.atom?count=10"
 
  * Example curl response:
-{{{
-?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
 
+?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
+{{{
 	<entry>
 		<id>feedzilla.com15596191</id>
 		<title type="html">Drew Brees can't say enough about RB Ladell Betts (The Canadian Press) (Yahoo!)</title>
@@ -413,9 +413,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/13/articles/search.rss?q=Michael&title_only=1"
 
  * Example curl response:
-{{{
-<rss version="2.0">
 
+<rss version="2.0">
+{{{
 	<item>
 		<guid isPermaLink="false">feedzilla.com15558351</guid>
 		<link>http://news.feedzilla.com/en_us/stories/art/15558351?q=painting&amp;client_source=api&amp;format=rss</link>
@@ -430,9 +430,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/articles/search.atom?q=Michael&count=10"
 
  * Example curl response:
-{{{
-<feed xmlns="http://www.w3.org/2005/Atom">
 
+<feed xmlns="http://www.w3.org/2005/Atom">
+{{{
 	<entry>
 		<id>feedzilla.com15549562</id>
 		<title type="html">DRAYS BAY :: ALDS Link and Analysis: Michael Young, Cliff Lee, Ben Zobrist, and Jonah Keri (Sports Blog)</title>
@@ -510,6 +510,8 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/subcategories/1370/articles.atom?count=10"
 
  * Example curl response:
+
+?<?xml version="1.0" encoding="utf-8"?> <?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
 {{{
 
 	<entry>
@@ -574,10 +576,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/categories/27/subcategories/1370/articles/search.rss?q=Michael&title_only=1"
 
  * Example curl response:
-{{{
+
 <rss version="2.0">
-
-
+{{{
 	<item>
 		<guid isPermaLink="false">feedzilla.com15620501</guid>
 		<link>http://news.feedzilla.com/en_us/stories/sports/basketball-nba/15620501?q=michael&amp;client_source=api&amp;format=rss</link>
@@ -594,7 +595,6 @@ The API supports the following methods to send and receive Feedzilla data.
 
  * Example curl response:
 {{{
-
 	<entry>
 		<id>feedzilla.com14987817</id>
 		<title type="html">Washington Ballet Ditches Live Music For 2010/11 (Arts Journal)</title>
@@ -659,10 +659,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/articles/search.rss?q=Michael&title_only=1"
 
  * Example curl response:
-{{{
+
 <rss version="2.0">
-
-
+{{{
 	<item>
 		<guid isPermaLink="false">feedzilla.com15622757</guid>
 		<link>http://news.feedzilla.com/en_us/stories/15622757?q=michael&amp;client_source=api&amp;format=rss</link>
@@ -679,10 +678,9 @@ The API supports the following methods to send and receive Feedzilla data.
  * Example curl call: "curl http://api.feedzilla.com/v1/articles/search.atom?q=Michael&count=10"
 
  * Example curl response:
-{{{
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
 
-	
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
+{{{	
 	<entry>
 		<id>feedzilla.com15595807</id>
 		<title type="html">NBA 2K11 Ships (Gameinfowire.com)</title>
