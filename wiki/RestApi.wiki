@@ -511,7 +511,7 @@ The API supports the following methods to send and receive Feedzilla data.
 
  * Example curl response:
 {{{
-?<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="/styles/atom10.xsl"?>
+?<?xml version="1.0" encoding="utf-8"?>
 
 	<entry>
 		<id>feedzilla.com15621161</id>
